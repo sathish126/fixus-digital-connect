@@ -45,7 +45,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
@@ -111,18 +111,18 @@ const Footer = () => {
 
           {/* Team */}
           <div>
-            <h4 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Our Team</h4>
+            <h4 className="text-base sm:text-lg lg:text-xl font-bold mb-3 sm:mb-4 lg:mb-6">Our Team</h4>
             <ul className="space-y-2 sm:space-y-3">
               {team.map((member, index) => (
                 <li key={index}>
                   <button 
-                    className="text-white/80 hover:text-secondary transition-colors cursor-pointer flex items-center group text-sm sm:text-base text-left w-full"
+                    className="text-white/80 hover:text-secondary transition-colors cursor-pointer flex items-start group text-xs sm:text-sm lg:text-base text-left w-full"
                     onClick={() => handleWhatsAppClick()}
                   >
-                    <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 group-hover:scale-125 transition-transform flex-shrink-0" />
-                    <div>
-                      <div className="font-medium">{member.name}</div>
-                      <div className="text-xs text-white/60">{member.role}</div>
+                    <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-secondary rounded-full mr-2 sm:mr-3 group-hover:scale-125 transition-transform flex-shrink-0 mt-2" />
+                    <div className="min-w-0 flex-1">
+                      <div className="font-medium text-white break-words">{member.name}</div>
+                      <div className="text-xs sm:text-xs text-white/60 break-words">{member.role}</div>
                     </div>
                   </button>
                 </li>
