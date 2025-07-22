@@ -29,7 +29,6 @@ const Hero = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            Professional
             <span className="block bg-gradient-to-r from-secondary-light to-accent bg-clip-text text-transparent">
               IT Solutions
             </span>
@@ -40,7 +39,35 @@ const Hero = () => {
             to help your business grow and succeed.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12">
+          {/* Quote */}
+          <div className="mb-8 sm:mb-12">
+            <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-white/95 italic">
+              "Restart is better than regret"
+            </p>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 max-w-4xl mx-auto mb-8 sm:mb-12">
+            {[
+              { number: "25+", label: "Projects Delivered" },
+              { number: "15+", label: "Happy Clients" },
+              { number: "2+", label: "Years Experience" },
+              { number: "10+", label: "IT Experts" },
+              { number: "200+", label: "Projects Completed" }
+            ].map((stat, index) => (
+              <div 
+                key={index}
+                className="text-center animate-fade-in p-2"
+                style={{ animationDelay: `${1 + index * 0.2}s` }}
+              >
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">{stat.number}</div>
+                <div className="text-xs sm:text-sm lg:text-base text-white/80">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Buttons moved below */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start items-start sm:items-center">
             <Button 
               size="lg"
               onClick={handleGetStarted}
@@ -57,24 +84,6 @@ const Hero = () => {
             >
               Our Services
             </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-xl mx-auto">
-            {[
-              { number: "200+", label: "Projects Delivered" },
-              { number: "50+", label: "Happy Clients" },
-              { number: "24/7", label: "Support" }
-            ].map((stat, index) => (
-              <div 
-                key={index}
-                className="text-center animate-fade-in p-2"
-                style={{ animationDelay: `${1 + index * 0.3}s` }}
-              >
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">{stat.number}</div>
-                <div className="text-sm sm:text-base text-white/80">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

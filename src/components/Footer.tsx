@@ -13,7 +13,24 @@ const Footer = () => {
     "Cybersecurity",
     "IT Consulting",
     "Data Management",
-    "Technical Support"
+    "Technical Support",
+    "PCB Building",
+    "3D Model Design & Simulation",
+    "CAD Works",
+    "Project Development",
+    "Robokits Development"
+  ];
+
+  const team = [
+    { name: "Sathish P", role: "CEO" },
+    { name: "Athish", role: "CIO" },
+    { name: "Sukesh", role: "Co founder" },
+    { name: "Sriadhikesavan R", role: "CFO" },
+    { name: "Aravind Kaarthic P S", role: "CTO" },
+    { name: "Abin S", role: "Data Analyst & Supply Chain Specialist" },
+    { name: "Dinesh Kumar M", role: "Technical Head" },
+    { name: "Dhivyesh", role: "Technical developer" },
+    { name: "Nimaleshwar D K", role: "Cyber security analyst" }
   ];
 
   const industries = [
@@ -29,7 +46,7 @@ const Footer = () => {
     <footer className="bg-primary text-white">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-secondary-light bg-clip-text text-transparent">
@@ -87,6 +104,27 @@ const Footer = () => {
                     <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 group-hover:scale-125 transition-transform flex-shrink-0" />
                     {industry}
                   </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Team */}
+          <div>
+            <h4 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Our Team</h4>
+            <ul className="space-y-2 sm:space-y-3">
+              {team.map((member, index) => (
+                <li key={index}>
+                  <button 
+                    className="text-white/80 hover:text-secondary transition-colors cursor-pointer flex items-center group text-sm sm:text-base text-left w-full"
+                    onClick={() => handleWhatsAppClick()}
+                  >
+                    <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 group-hover:scale-125 transition-transform flex-shrink-0" />
+                    <div>
+                      <div className="font-medium">{member.name}</div>
+                      <div className="text-xs text-white/60">{member.role}</div>
+                    </div>
+                  </button>
                 </li>
               ))}
             </ul>
